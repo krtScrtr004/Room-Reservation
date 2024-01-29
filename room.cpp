@@ -489,7 +489,7 @@ void Room::m_sort_reserved_f(std::vector<std::string> &arr_reserver, std::vector
     return;
 }
 
-const std::string Room::m_enter_room_code_f(void) const
+inline const std::string Room::m_enter_room_code_f(void) const
 {
     std::string temp_room_code = " ";
     bool is_valid = false;
@@ -504,7 +504,7 @@ const std::string Room::m_enter_room_code_f(void) const
     return temp_room_code;
 }
 
-const std::string Room::m_enter_board_type_f(void) const
+inline const std::string Room::m_enter_board_type_f(void) const
 {
     enum class Board_Type_e : unsigned short
     {
@@ -561,7 +561,7 @@ const std::string Room::m_enter_board_type_f(void) const
     return "N/A";
 }
 
-const bool Room::m_enter_has_TV_f(void) const
+inline const bool Room::m_enter_has_TV_f(void) const
 {
     char answer = ' ';
     bool is_valid = false;
@@ -576,7 +576,7 @@ const bool Room::m_enter_has_TV_f(void) const
     return (answer == 'Y') ? true : false;
 }
 
-const bool Room::m_enter_has_AC_f(void) const
+inline const bool Room::m_enter_has_AC_f(void) const
 {
     char answer = ' ';
     bool is_valid = false;

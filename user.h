@@ -88,7 +88,7 @@ public:
         m_fetch_user_info_f(M_FILE_NAME);
     }
 
-    void m_sort_f(User *user)
+    inline void m_sort_f(User *user)
     {
         this->m_sort_f(this->m_profile.m_name, this->m_profile.m_id, this->m_profile.m_email,
                        this->m_profile.m_password, this->m_profile.m_no_of_reserved, this->m_profile.m_is_suspended);
@@ -96,33 +96,33 @@ public:
     }
 
     /* USER INFO SETTER ************************************************************/
-    void m_set_name_f(const std::string &USER_NAME)
+    inline void m_set_name_f(const std::string &USER_NAME)
     {
         m_profile.m_name.push_back(USER_NAME);
         return;
     }
-    void m_set_id_f(const std::string &USER_ID)
+    inline void m_set_id_f(const std::string &USER_ID)
     {
         m_profile.m_id.push_back(USER_ID);
         return;
     }
-    void m_set_email_f(const std::string &USER_EMAIL)
+    inline void m_set_email_f(const std::string &USER_EMAIL)
     {
         m_profile.m_email.push_back(USER_EMAIL);
         return;
     }
-    void m_set_password_f(const std::string &USER_PASSWORD)
+    inline void m_set_password_f(const std::string &USER_PASSWORD)
     {
         m_profile.m_password.push_back(USER_PASSWORD);
         return;
     }
-    void m_set_no_of_reserved(void)
+    inline void m_set_no_of_reserved(void)
     {
         m_profile.m_no_of_reserved.push_back(100);
         return;
     }
 
-    void m_set_is_suspended(void)
+    inline void m_set_is_suspended(void)
     {
         m_profile.m_is_suspended.push_back(false);
         return;
@@ -130,18 +130,18 @@ public:
     /*****************************************************************************/
 
     /* USER INFO GETTERS *************************************************************/
-    const std::string m_get_name_f(const unsigned short USER_INDEX) const { return m_profile.m_name[USER_INDEX]; }
-    const std::string m_get_id_f(const unsigned short USER_INDEX) const { return m_profile.m_id[USER_INDEX]; }
-    const std::string m_get_email_f(const unsigned short USER_INDEX) const { return m_profile.m_email[USER_INDEX]; }
-    const std::string m_get_password_f(const unsigned short USER_INDEX) const { return m_profile.m_password[USER_INDEX]; }
-    const unsigned short m_get_no_of_reserved(const unsigned short USER_INDEX) const { return m_profile.m_no_of_reserved[USER_INDEX]; }
+    inline const std::string m_get_name_f(const unsigned short USER_INDEX) const { return m_profile.m_name[USER_INDEX]; }
+    inline const std::string m_get_id_f(const unsigned short USER_INDEX) const { return m_profile.m_id[USER_INDEX]; }
+    inline const std::string m_get_email_f(const unsigned short USER_INDEX) const { return m_profile.m_email[USER_INDEX]; }
+    inline const std::string m_get_password_f(const unsigned short USER_INDEX) const { return m_profile.m_password[USER_INDEX]; }
+    inline const unsigned short m_get_no_of_reserved(const unsigned short USER_INDEX) const { return m_profile.m_no_of_reserved[USER_INDEX]; }
     /*****************************************************************************/
 
     /* USER INFO FORMS *************************************************************/
-    const std::string m_enter_name_f(void) const;
-    const std::string m_enter_id_f(void) const;
-    const std::string m_enter_email_f(void) const;
-    const std::string m_enter_password_f(void) const;
+    inline const std::string m_enter_name_f(void) const;
+    inline const std::string m_enter_id_f(void) const;
+    inline const std::string m_enter_email_f(void) const;
+    inline const std::string m_enter_password_f(void) const;
     /*****************************************************************************/
 
     // CHECKS EMAIL AND ID ONLY

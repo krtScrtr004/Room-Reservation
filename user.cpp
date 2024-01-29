@@ -425,7 +425,7 @@ void User::m_delete_user_f(User *acc_type, const unsigned short USER_INDEX)
 }
 
 // PUBLIC METHODS
-const std::string User::m_enter_name_f(void) const
+inline const std::string User::m_enter_name_f(void) const
 {
     bool is_valid = true;
     std::string temp_name = " ";
@@ -440,7 +440,7 @@ const std::string User::m_enter_name_f(void) const
     return temp_name;
 }
 
-const std::string User::m_enter_id_f(void) const
+inline const std::string User::m_enter_id_f(void) const
 {
     bool is_valid = true;
     std::string temp_id = " ";
@@ -456,7 +456,7 @@ const std::string User::m_enter_id_f(void) const
     return temp_id;
 }
 
-const std::string User::m_enter_email_f(void) const
+inline const std::string User::m_enter_email_f(void) const
 {
     bool is_valid = true;
     std::string temp_email = " ";
@@ -471,7 +471,7 @@ const std::string User::m_enter_email_f(void) const
     return temp_email;
 }
 
-const std::string User::m_enter_password_f(void) const
+inline const std::string User::m_enter_password_f(void) const
 {
     bool is_valid = true;
     std::string temp_password = " ";

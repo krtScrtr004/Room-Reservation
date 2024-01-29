@@ -84,27 +84,27 @@ private:
     /*****************************************************************************/
 
     /* ROOM INFO SETTERS *************************************************************/
-    void m_set_room_type_f(const Room_Type_e TEMP_ROOM_TYPE)
+    inline void m_set_room_type_f(const Room_Type_e TEMP_ROOM_TYPE)
     {
         m_room_type = TEMP_ROOM_TYPE;
         return;
     }
-    void m_set_room_code_f(const std::string &ROOM_CODE)
+    inline void m_set_room_code_f(const std::string &ROOM_CODE)
     {
         m_info.m_code.push_back(ROOM_CODE);
         return;
     }
-    void m_set_board_type_f(const std::string &BOARD_TYPE)
+    inline void m_set_board_type_f(const std::string &BOARD_TYPE)
     {
         m_info.m_board_type.push_back(BOARD_TYPE);
         return;
     }
-    void m_set_has_TV_f(const bool HAS_TV)
+    inline void m_set_has_TV_f(const bool HAS_TV)
     {
         m_info.m_TV.push_back(HAS_TV);
         return;
     }
-    void m_set_has_AC_f(const bool HAS_AC)
+    inline void m_set_has_AC_f(const bool HAS_AC)
     {
         m_info.m_AC.push_back(HAS_AC);
         return;
@@ -112,22 +112,22 @@ private:
     /*****************************************************************************/
 
     /* RESERVER INFO SETTERS ********************************************************/
-    void m_set_reserver_id_f(const std::string &USER_ID)
+    inline void m_set_reserver_id_f(const std::string &USER_ID)
     {
         m_reservation.m_reserver.push_back(USER_ID);
         return;
     }
-    void m_set_reservation_code_f(const std::string &ROOM_CODE)
+    inline void m_set_reservation_code_f(const std::string &ROOM_CODE)
     {
         m_reservation.m_reserved_room.push_back(ROOM_CODE);
         return;
     }
-    void m_set_reservation_day_f(const time_t RESERVED_DAY)
+    inline void m_set_reservation_day_f(const time_t RESERVED_DAY)
     {
         m_reservation.m_reserved_day.push_back(RESERVED_DAY);
         return;
     }
-    void m_set_reservation_room_type_f(const char ROOM_TYPE)
+    inline void m_set_reservation_room_type_f(const char ROOM_TYPE)
     {
         m_reservation.m_room_type.push_back(ROOM_TYPE);
         return;
@@ -135,10 +135,10 @@ private:
     /*****************************************************************************/
 
     /* ROOM INFO INPUT FORM ******************************************************/
-    const std::string m_enter_room_code_f(void) const;
-    const std::string m_enter_board_type_f(void) const;
-    const bool m_enter_has_TV_f(void) const;
-    const bool m_enter_has_AC_f(void) const;
+    inline const std::string m_enter_room_code_f(void) const;
+    inline const std::string m_enter_board_type_f(void) const;
+    inline const bool m_enter_has_TV_f(void) const;
+    inline const bool m_enter_has_AC_f(void) const;
     /*****************************************************************************/
 
     bool is_valid_reservation_day_f(const char ROOM_TYPE, const unsigned short ROOM_INDEX, time_t RESERVED_DAY);
@@ -176,10 +176,10 @@ public:
     }
 
     /* ROOM INFO GETTERS *************************************************************/
-    const std::string m_get_room_code_f(const unsigned short ROOM_INDEX) const { return m_info.m_code[ROOM_INDEX]; }
-    const std::string m_get_room_board_type_f(const unsigned short ROOM_INDEX) const { return m_info.m_board_type[ROOM_INDEX]; }
-    const bool m_get_room_TV(const unsigned short ROOM_INDEX) const { return m_info.m_TV[ROOM_INDEX]; }
-    const bool m_get_room_AC(const unsigned short ROOM_INDEX) const { return m_info.m_AC[ROOM_INDEX]; }
+    inline const std::string m_get_room_code_f(const unsigned short ROOM_INDEX) const { return m_info.m_code[ROOM_INDEX]; }
+    inline const std::string m_get_room_board_type_f(const unsigned short ROOM_INDEX) const { return m_info.m_board_type[ROOM_INDEX]; }
+    inline const bool m_get_room_TV(const unsigned short ROOM_INDEX) const { return m_info.m_TV[ROOM_INDEX]; }
+    inline const bool m_get_room_AC(const unsigned short ROOM_INDEX) const { return m_info.m_AC[ROOM_INDEX]; }
     /*****************************************************************************/
     
     /* ROOM TYPE SELECTOR ********************************************************/
