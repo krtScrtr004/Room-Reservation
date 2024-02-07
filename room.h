@@ -191,7 +191,7 @@ public:
     void m_room_list_f(void) const;
     const short m_select_room_f(void);
     const time_t m_enter_reservation_day_f(const unsigned short ROOM_INDEX);
-    bool Room::m_set_reservation_info_f(User *user, const char ROOM_TYPE, const std::string &USER_ID, const unsigned short ROOM_INDEX, const time_t RESERVED_DAY);
+    bool m_set_reservation_info_f(User *user, const char ROOM_TYPE, const std::string &USER_ID, const unsigned short ROOM_INDEX, const time_t RESERVED_DAY);
     void m_unset_passed_reservation_f(void);
     /*****************************************************************************/
 

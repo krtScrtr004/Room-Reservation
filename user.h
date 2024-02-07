@@ -7,7 +7,7 @@
 #include <string>
 #include <vector>
 
-#include "user.h"
+// #include "user.h"
 
 enum class User_Type_e : short
 {
@@ -138,10 +138,66 @@ public:
     /*****************************************************************************/
 
     /* USER INFO FORMS *************************************************************/
-    inline const std::string m_enter_name_f(void) const;
-    inline const std::string m_enter_id_f(void) const;
-    inline const std::string m_enter_email_f(void) const;
-    inline const std::string m_enter_password_f(void) const;
+    inline const std::string m_enter_name_f(void) const
+    {
+        bool is_valid = true;
+        std::string temp_name = " ";
+        const unsigned short MIN = 5U, MAX = 25U;
+        do
+        {
+            std::cout << "ENTER NAME: (LN, FN, MI.) ";
+            getline(std::cin, temp_name);
+            is_valid = is_valid_str_no_num_f(temp_name, static_cast<short>(MIN), static_cast<short>(MAX));
+        } while (!is_valid);
+
+        return temp_name;
+    }
+
+    inline const std::string m_enter_id_f(void) const
+    {
+        bool is_valid = true;
+        std::string temp_id = " ";
+        const unsigned short MIN = 5U, MAX = 25U;
+        do
+        {
+            std::cout << "ENTER ID: (Ex. 2023 - xxxxxx) ";
+            getline(std::cin, temp_id);
+            temp_id = remove_space_str_f(temp_id);
+            is_valid = is_valid_str_f(temp_id, static_cast<short>(MIN), static_cast<short>(MAX));
+        } while (!is_valid);
+
+        return temp_id;
+    }
+
+    inline const std::string m_enter_email_f(void) const
+    {
+        bool is_valid = true;
+        std::string temp_email = " ";
+        do
+        {
+            std::cout << "ENTER EMAIL: (Ex. abc@gmail.com) ";
+            getline(std::cin, temp_email);
+            temp_email = remove_space_str_f(temp_email);
+            is_valid = is_valid_email(temp_email);
+        } while (!is_valid);
+
+        return temp_email;
+    }
+
+    inline const std::string m_enter_password_f(void) const
+    {
+        bool is_valid = true;
+        std::string temp_password = " ";
+        const unsigned short MIN = 5U, MAX = 25U;
+        do
+        {
+            std::cout << "ENTER PASSWORD: (Ex. abc123) ";
+            getline(std::cin, temp_password);
+            is_valid = is_valid_str_f(temp_password, static_cast<short>(MIN), static_cast<short>(MAX));
+        } while (!is_valid);
+
+        return temp_password;
+    }
     /*****************************************************************************/
 
     // CHECKS EMAIL AND ID ONLY
