@@ -530,7 +530,7 @@ inline const std::string Room::m_enter_board_type_f(void) const
     {
         std::cout << "ENTER HERE: ";
         std::cin >> choice;
-        is_valid = (choice, static_cast<short>(MIN), static_cast<short>(MAX));
+        is_valid = is_valid_num_f(choice, static_cast<short>(MIN), static_cast<short>(MAX));
     } while (!is_valid);
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     board_type = static_cast<Board_Type_e>(choice);
@@ -612,7 +612,7 @@ bool Room::is_valid_reservation_day_f(const char ROOM_TYPE, const unsigned short
     {
     case 'C':
     {
-        if (m_reservation.m_classroom_reservation_calendar != 0)
+        if (m_reservation.m_classroom_reservation_calendar[current_month][ROOM_INDEX] != 0)
         {
             std::cerr << already_reserved_error_f(m_get_room_code_f(ROOM_INDEX));
             return false;
@@ -621,7 +621,7 @@ bool Room::is_valid_reservation_day_f(const char ROOM_TYPE, const unsigned short
 
     case 'L':
     {
-        if (m_reservation.m_classroom_reservation_calendar != 0)
+        if (m_reservation.m_classroom_reservation_calendar[current_month][ROOM_INDEX] != 0)
         {
             std::cerr << already_reserved_error_f(m_get_room_code_f(ROOM_INDEX));
             return false;
